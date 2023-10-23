@@ -3,6 +3,7 @@ package pages;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeClass;
@@ -23,6 +24,10 @@ public class BasePage {
     @BeforeClass
     public void setUp() {
         WebDriverManager.chromedriver().setup();
+        ChromeOptions chromeOptions = new ChromeOptions();
+        chromeOptions.addArguments("--headless"); // Enable headless mode
+
+        WebDriver driver = new ChromeDriver(chromeOptions);
         driver = new ChromeDriver();
         driver.get(BASE_URL);
     }

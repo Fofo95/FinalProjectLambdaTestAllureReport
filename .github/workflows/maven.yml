@@ -27,14 +27,12 @@ jobs:
         java-version: '17'
         distribution: 'temurin'
         cache: maven
-    - name: Install Google Chrome # Using shell script to install Google Chrome
-      run: |
-          chmod +x ./scripts/InstallChrome.sh
-                 ./scripts/InstallChrome.sh 
-          - name: Build with Maven
-            run: mvn test --file pom.xml
+
     - name: Build with Maven
       run: mvn -B package --file pom.xml
+
+    - name: Run Tests Headlessly
+      run: mvn test -Dwebdriver.chrome.driver=chromedriver --file pom.xml
 
     # Optional: Uploads the full dependency graph to GitHub to improve the quality of Dependabot alerts this repository can receive
     - name: Update dependency graph
