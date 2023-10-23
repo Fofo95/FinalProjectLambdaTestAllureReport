@@ -22,8 +22,8 @@ public class BasePage {
 
     @BeforeClass
     public void setUp() {
-        WebDriverManager.firefoxdriver().setup();
-        driver = new FirefoxDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.get(BASE_URL);
     }
 
