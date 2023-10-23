@@ -1,0 +1,1 @@
+{"uuid":"ea3e6e76-56a8-42a3-8df0-20400058ef4c","name":"CheckboxPageTestCases.setUp","children":["a96dd204-30a5-4a53-8f52-581da3fdc892"],"description":"","befores":[{"name":"setUp","status":"passed","stage":"finished","description":"","steps":[],"attachments":[],"parameters":[],"start":1698047677342,"stop":1698047686784}],"afters":[],"start":1698047677341,"stop":1698047686784}
