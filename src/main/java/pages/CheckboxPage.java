@@ -8,14 +8,18 @@ import org.openqa.selenium.support.PageFactory;
 
 public class CheckboxPage extends BasePage {
 
+    //=====================================================
     public CheckboxPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
-
+    //=====================================================
     @FindBy(id = "isAgeSelected")
     private WebElement singleCheckbox;
 
+    public void clickOnSingleCheckbox() {
+        singleCheckbox.click();
+    }
     @FindBy(xpath = "/html/body/div[1]/div/section[2]/div/div/div/div[2]/div[2]/div[1]/input")
     private WebElement firstCheckboxOption;
 
@@ -31,9 +35,7 @@ public class CheckboxPage extends BasePage {
     @FindBy(id = "box")
     private WebElement checkAllOption;
 
-    public void clickOnSingleCheckbox() {
-        singleCheckbox.click();
-    }
+
 
     public void clickOnTheFirstCheckboxOption() {
         firstCheckboxOption.click();

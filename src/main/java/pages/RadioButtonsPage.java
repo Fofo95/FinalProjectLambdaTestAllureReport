@@ -7,10 +7,12 @@ import org.openqa.selenium.support.PageFactory;
 
 public class RadioButtonsPage extends BasePage {
 
+    //=====================================================
     public RadioButtonsPage(WebDriver driver) {
         super(driver);
         PageFactory.initElements(driver, this);
     }
+    //=====================================================
 
     @FindBy(linkText = "Radio Buttons Demo")
     private WebElement radioButtonsDemoLink;

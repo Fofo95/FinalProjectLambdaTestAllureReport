@@ -14,38 +14,45 @@ public class SimpleFormPage extends BasePage {
     }
     //=====================================================
 
-    @FindBy(id = "user-message")
+    @FindBy(css = "input[placeholder='Please enter your Message']")
     private WebElement textField;
-
-    @FindBy(id = "showInput")
-    private WebElement getCheckedValueButton;
-
-    @FindBy(id = "sum1")
-    private WebElement twoInputFieldsEnterA;
-
-    @FindBy(id = "sum2")
-    private WebElement twoInputFieldsEnterB;
-
-    @FindBy(xpath = "//*[@id='gettotal']/button")
-    private WebElement getValuesButton;
-
-    public void clickOnGetCheckedValue() {
-        getCheckedValueButton.click();
-    }
 
     public void enterTextInTextField(String text) {
         textField.sendKeys(text);
     }
+    @FindBy(id = "showInput")
+    private WebElement getCheckedValueButton;
 
+    public void clickOnGetCheckedValueButton(){
+        getCheckedValueButton.click();
+    }
+    @FindBy(id = "message")
+    private WebElement checkMessage;
+    public void checkYourMessage(){
+        checkMessage.getText();
+    }
+
+    @FindBy(id = "sum1")
+    private WebElement twoInputFieldsEnterA;
     public void enterValueInA(String valueA) {
         twoInputFieldsEnterA.sendKeys(valueA);
     }
 
+    @FindBy(id = "sum2")
+    private WebElement twoInputFieldsEnterB;
     public void enterValueInB(String valueB) {
         twoInputFieldsEnterB.sendKeys(valueB);
     }
 
+    @FindBy(xpath = "//*[@id='gettotal']/button")
+    private WebElement getValuesButton;
     public void clickOnGetValuesButton() {
         getValuesButton.click();
+    }
+
+    @FindBy(css = "#gettotal > button")
+    private WebElement getValuesButtonAlternative;
+    public void clickOnGetValuesButtonAlternative() {
+        getValuesButtonAlternative.click();
     }
 }
