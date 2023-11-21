@@ -23,8 +23,14 @@ public class KeyPressTests extends BasePage {
         keyPressPage.typeInTheTextField("T");
 
         String actualResult = driver.findElement(By.id("result")).getText();
-        Assert.assertTrue(actualResult.contains("T"));
+        Assert.assertEquals(actualResult, "You entered: T");
     }
+
+
+
+
+
+
     @Description ("Write an integer and check the result")
     @Test
     public void writeAnIntegerAndCheckTheResult(){
@@ -42,7 +48,7 @@ public class KeyPressTests extends BasePage {
 
         String actualResult = driver.findElement(By.id("result")).getText();
         System.out.println(actualResult);
-        Assert.assertEquals(actualResult, "{");
+        Assert.assertEquals(actualResult, "You entered: OPEN_BRACKET");
     }
 
     @Description ("Type SHIFT and check the result")
@@ -73,6 +79,6 @@ public class KeyPressTests extends BasePage {
 
         String actualResult = driver.findElement(By.id("result")).getText();
         System.out.println(actualResult);
-        Assert.assertEquals(actualResult, "You entered: Arrow Up");
+        Assert.assertEquals(actualResult, "You entered: UP");
     }
 }

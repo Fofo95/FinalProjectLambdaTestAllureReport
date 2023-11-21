@@ -35,8 +35,6 @@ public class CheckboxPage extends BasePage {
     @FindBy(id = "box")
     private WebElement checkAllOption;
 
-
-
     public void clickOnTheFirstCheckboxOption() {
         firstCheckboxOption.click();
     }

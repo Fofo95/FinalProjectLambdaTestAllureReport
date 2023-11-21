@@ -15,7 +15,7 @@ public class SimpleFormTests extends BasePage {
         super.setUp();
         simpleFormPage = new SimpleFormPage(driver);
     }
-    @Test ()
+    @Test
     public void enterMessageAndClickGetCheckedValue() {
         driver.findElement(simpleFormDemoLink).click(); // Use the constant locator
         simpleFormPage.enterTextInTextField("Test");
@@ -29,7 +29,7 @@ public class SimpleFormTests extends BasePage {
     // adaugati 3 teste pentru Two Input Fields
 
 
-    @Test()
+    @Test
     public void enterTwoInputsAndClickOnGetSum() {
         driver.findElement(simpleFormDemoLink).click();
         simpleFormPage.enterValueInA("1");
