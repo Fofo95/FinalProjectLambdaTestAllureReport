@@ -24,18 +24,10 @@ public class BasePage {
 
     @BeforeMethod
     public void setUp() {
-        if (System.getenv("GITHUB_ACTIONS") != null && System.getenv("GITHUB_ACTIONS").equalsIgnoreCase("true")) {
-            // Set up WebDriver for headless mode on GitHub Actions
-            WebDriverManager.firefoxdriver().setup();
-            FirefoxOptions options = new FirefoxOptions();
-            options.addArguments("--headless");
-            driver = new FirefoxDriver(options);
-        } else {
-            // Set up WebDriver for non-headless mode
-            WebDriverManager.firefoxdriver().setup();
-            driver = new FirefoxDriver();
-        }
-
+        WebDriverManager.firefoxdriver().setup();
+        FirefoxOptions options = new FirefoxOptions();
+        options.addArguments("--headless");
+        driver = new FirefoxDriver(options);
         driver.manage().window().maximize();
         driver.get(BASE_URL);
     }
