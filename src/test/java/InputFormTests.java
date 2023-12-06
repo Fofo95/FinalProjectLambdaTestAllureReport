@@ -38,7 +38,7 @@ public class InputFormTests extends BasePage {
         Assert.assertTrue(actualResult.contains("Thanks for contacting us, we will get back to you shortly."));
     }*/
 
-    @Description("Varianta alternativa cu Assert.assertEquals in loc de Assert.assertTrue")
+    @Description("Fill all the field with valid data and click on the submit button")
     @Test
     public void FirstTestOfThePageInputFromSubmit2(){
         driver.findElement(InputFormDemoLink).click();
